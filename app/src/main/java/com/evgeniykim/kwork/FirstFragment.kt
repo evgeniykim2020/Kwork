@@ -41,8 +41,6 @@ class FirstFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setUpViewModel()
-//        setupOrders()
-//        setUpAdapter()
         activateButtons()
     }
 
@@ -52,11 +50,6 @@ class FirstFragment : Fragment() {
             ordersList = viewModel.orders.value!!
             setUpAdapter()
         })
-    }
-
-    private fun setupOrders() {
-        val ordersComing = ComingOrders()
-        ordersList = ordersComing.setupOrders()
     }
 
     private fun setUpAdapter() {
@@ -78,6 +71,5 @@ class FirstFragment : Fragment() {
 
         val processButtons = ProcessButtons(requireContext())
         processButtons.click(filter_button_1, filter_button_2, filter_button_3)
-
     }
 }
