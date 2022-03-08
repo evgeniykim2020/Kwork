@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/filter"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="none">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/filter_button_1"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_text_regular"
+            android:text="В работе"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:theme="@style/MyTheme"
+            app:backgroundTint="@color/green"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@color/green"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/filter_button_2"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/sf_pro_text_regular"
+            android:text="В процессе"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/mid_grey"
+            android:textSize="12sp"
+            android:theme="@style/MyTheme"
+            app:backgroundTint="@color/white"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/filter_button_1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@color/dark_grey" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/filter_button_3"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/sf_pro_text_regular"
+            android:text="Завершаю"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/mid_grey"
+            android:textSize="12sp"
+            android:theme="@style/MyTheme"
+            app:backgroundTint="@color/white"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/filter_button_2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@color/dark_grey" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</HorizontalScrollView>

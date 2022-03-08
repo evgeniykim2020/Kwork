@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/upper_bar"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:background="@color/light_grey">
+
+    <TextView
+        android:id="@+id/title_orders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sf_pro_text_regular"
+        android:text="Заказы"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_orders">
+
+        <TextView
+            android:id="@+id/buyer_seller_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Я покупатель"
+            android:fontFamily="@font/sf_pro_text_regular"
+            android:textSize="16sp"
+            android:textColor="@color/mid_grey"/>
+
+        <ImageView
+            android:id="@+id/arrow_up_down"
+            android:layout_width="wrap_content"
+            android:layout_height="8dp"
+            android:src="@drawable/arrow_down"
+            android:layout_marginStart="5dp"
+            android:layout_gravity="center_vertical"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
