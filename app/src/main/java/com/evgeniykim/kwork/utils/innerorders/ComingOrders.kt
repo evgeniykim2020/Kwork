@@ -1,5 +1,6 @@
 package com.evgeniykim.kwork.utils.innerorders
 
+import android.util.Log
 import com.evgeniykim.kwork.R
 import com.evgeniykim.kwork.models.OrdersModels
 import com.evgeniykim.kwork.utils.CompareDays
@@ -13,6 +14,8 @@ import kotlin.collections.ArrayList
 
 class ComingOrders {
 
+    private val TAG = "ComingOrders"
+
     private val RUB = "₽"
     private val fewHours = SimpleDateFormat(Constants.HOURS_MINS).format(Date())
     private val today = "Сегодня"
@@ -25,8 +28,9 @@ class ComingOrders {
 
         val imageUri = R.drawable.avatar_image.toString()
         val name = "Tom"
-        val currentTime = Calendar.getInstance().time
-        val date = currentTime.time
+//        val currentTime = Calendar.getInstance().time
+//        val date = currentTime.time
+        val date = System.currentTimeMillis()
         val desc = "Съемка с квадрокоптера всего процесса обучения"
         val price = "100 000 $RUB"
 
@@ -45,11 +49,17 @@ class ComingOrders {
     private fun setTimeDate(date: Long): String {
         var time = ""
         val showTime = CompareDays()
-        if (showTime.isHours(date)) time = fewHours
-        if (showTime.isToday(date)) time = today
-        if (showTime.isYesterday(date)) time = yesterday
-        if (showTime.isTwoDaysBefore(date)) time = twoDaysBefore
-        if (showTime.thisYear(date)) time = over2daysBefore
+        if (showTime.isHours(date)) {
+            time = fewHours
+            Log.e(TAG, "Few hours date is $date")
+        }
+        else if (showTime.isToday(date)) {
+            time = today
+            Log.e(TAG, "Today date is $date")
+        }
+        else if (showTime.isYesterday(date)) time = yesterday
+        else if (showTime.isTwoDaysBefore(date)) time = twoDaysBefore
+        else if (showTime.thisYear(date)) time = over2daysBefore
 
         return time
     }
